@@ -6,14 +6,27 @@
 body {
     background-color: #f6f8fc;
 }
-
+.p1{
+    background: linear-gradient(to bottom right, yellow, green);
+    box-shadow:
+      8px 8px 10px 0px deeppink,
+      -5px -5px 5px 0px blue,
+      5px 5px 15px 0px yellow;
+    padding: 0em 1em;
+    border-radius: 16px;
+    border-style: solid;
+    margin-right: 40%;
+    margin-left: 40%;
+    font: 30px 'Roboto';
+    line-height: 2;
+    text-align: center;
+}
 .content {
     width: 100vw;
     height: 100vh;
     padding: 1rem;
     background-color: #fff;
 }
-
 @media screen and (min-width: 992px) {
     .content {
         max-width: 992px;
