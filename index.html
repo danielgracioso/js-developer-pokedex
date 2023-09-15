@@ -25,9 +25,8 @@
 <body>
     <h1 class="p1">Pokedex</h1>
     <section class="content">
-
         <ol id="pokemonList" class="pokemons">
-            <!-- ..... Pokemons here ..... -->
+            <!-- Os elementos dos Pokémons serão inseridos aqui -->
         </ol>
 
         <div class="pagination">
@@ -35,9 +34,24 @@
                 Carregue mais +/
             </button>
         </div>
+
+        <!-- Elemento de sobreposição -->
+        <div id="pokemon-overlay" class="overlay">
+            <div class="overlay-content">
+                <!-- Botão para fechar a sobreposição -->
+                <button id="close-overlay">Fechar</button>
+                <div id="pokemon-detail" class="pokemon-details">
+                    <!-- As informações detalhadas do Pokémon serão inseridas aqui -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Elemento para abrir a sobreposição -->
+        <button id="open-overlay" style="display: none;">Abrir</button>
     </section>
 
     <!-- Nosso JS -->
+    <script src="/assets/js/detalhesClik.js"></script>
     <script src="/assets/js/pokemon-model.js"></script>
     <script src="/assets/js/poke-api.js"></script>
     <script src="/assets/js/main.js"></script>
