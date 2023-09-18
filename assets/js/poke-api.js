@@ -6,16 +6,28 @@ const pokeApi = {}
         pokemon.number = pokeDetail.id
         pokemon.name = pokeDetail.name
         pokemon.detalhes = 'Mais +'
-        pokemon.stats = pokeDetail.stats
 
         const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name)
         const [type] = types
 
         pokemon.types = types
         pokemon.type = type
-
+        const abilities = pokeDetail.abilities.map((abilitiesAbility) => abilitiesAbility.ability.name)
+        const [ability] = abilities
+    
+        pokemon.abilities = abilities
+        pokemon.ability = ability
+    
         pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
-
+       
+    
+        const stats = pokeDetail.stats.map((statsBase_stat) => `${statsBase_stat.stat.name}: ${statsBase_stat.base_stat}` )
+        const [stat] = stats
+    
+        pokemon.stats = stats
+        pokemon.stat = stat
+     
+    
         return pokemon
     }
 pokeApi.getPokemonDetail = (pokemon) => {

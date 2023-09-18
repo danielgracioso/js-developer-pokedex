@@ -6,11 +6,24 @@ const limit = 10
 let offset = 0;
 
 function convertPokemonToLi(pokemon) {
+    const pokemonDetails = `
+        <!-- Inclua aqui as informações detalhadas do Pokémon em HTML -->
+        <h1>Informações adicionais do Pokemon selecionado</h1>
+        <h2>${pokemon.name}</h2>
+        <h2>Número : #${pokemon.number}</h2>
+        <h2>Tipo : ${pokemon.types}</h2>
+        <h2>Habilidade : ${pokemon.abilities}</h2>
+        <h2>Status : ${pokemon.stats}</h2>
+
+        <!-- Adicione mais informações conforme necessário -->
+
+    `;
+
     return `
         <li class="pokemon ${pokemon.type}">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
-            <button class="detalhes" data-pokemon-details="${pokemon.details}">Mostrar +</button>
+            <button class="detalhes" data-pokemon-details="${pokemonDetails}">Mostrar +</button>
             <div class="detail">
                 <ol class="types">
                     ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
@@ -20,6 +33,8 @@ function convertPokemonToLi(pokemon) {
         </li>
     `;
 }
+
+
 
 function loadPokemonItens(offset, limit) {
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
